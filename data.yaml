@@ -1,0 +1,67 @@
+name: "Kaustubh"
+surname: "Murali Prakash"
+contact:
+  phone: "+44 7990156488"
+  email: "kaushi00rg@gmail.com"
+  homepage: "www.linkedin.com/in/kaushi00"
+
+# can comment out objective if not needed
+# Note - \\textbf{20\\%} use this format to include percentages
+objective: "Dynamic and results-oriented software developer with an MSc Artificial Intelligence, specializing in data-driven product development and software lifecycle management. Seeking to leverage expertise in programming, system testing, and collaborative project management to contribute to Siemens' innovative control systems and railway simulation projects."
+education:
+  - period: "2022--2024"
+    degree: "MSc Artificial Intelligence"
+    institution: "Queen Mary University of London"
+    location: "London, UK"
+    grade: ""
+  - period: "2018--2022"
+    degree: "Bachelor of Engineering"
+    institution: "Sir M Visvesvaraya Institute of Technology"
+    location: "Bangalore, India"
+    grade: "First Class Distinction"
+
+experience:
+  - period: "2022--2023"
+    title: "Product Developer"
+    company: "Petbiotech"
+    location: "Bangalore, India"
+    details:
+      - "Designed and implemented a real-time data monitoring system, enhancing decision-making and operational efficiency by \\textbf{20\\%}, crucial for tech-driven solutions."
+      - "Utilized Python for backend services; adapted and integrated system components into existing infrastructure, aligning with safety and security standards."
+      - "Managed the software development lifecycle, from concept through delivery, ensuring compliance with internal processes and regulatory standards."
+  - period: "2022--2023"
+    title: "Research and Data Analyst"
+    company: "Utpal Tatu Lab, Indian Institute of Science"
+    location: "Bangalore, India"
+    details:
+      - "Led the software development for epidemiological data analysis tools, focusing on safety-critical software requirements."
+      - "Designed and executed system-level tests to validate models and algorithms, ensuring adherence to health management practices and regulatory standards."
+#  - period: "2021--2022"
+#    title: "Digital Marketing and Data Scraping Intern"
+#    company: "Falcon Logic"
+#    location: "Bangalore, India"
+#    details:
+#      - "Spearheaded data-driven marketing strategies that boosted customer profiling accuracy and campaign targeting effectiveness by \\textbf{20\\%}."
+#      - "Programmed and maintained solutions for data analytics tasks that supported strategic decisions, leading to a \\textbf{15\\%} increase in operational efficiency"
+
+leadership:
+  - period: "2023--Present"
+    title: "Course Representative"
+    organization: "Queen Mary University of London"
+    location: "London, UK"
+    details:
+      - "Enhanced communication between students and faculty, organized focus groups to address course challenges, boosting student satisfaction by \\textbf{15\\%}."
+      - "Collaborated effectively with the Director of Education to refine the curriculum based on student feedback, increasing course completion rates by \\textbf{10\\%}."
+      - "Authored detailed analytical reports on student feedback which influenced curriculum adjustments, leading to a \\textbf{20\\%} rise in student engagement."
+
+skills:
+  Programming: "Python, R, SQL, Java, C++"
+  Technologies: "Machine Learning, Data Analytics, AWS, Experienced with data visualization"
+  Software Engineering : "Object-Oriented Design, UML, Unit Testing, Agile Methodologies, Configuration Management"
+  Soft Skills: "Problem Solving, Strategic Communication, Leadership, Project Management, Team Collaboration"
+
+certifications:
+  - year: "2023"
+    name: "Google’s Professional Certification in Data Analytics"
+  - year: "2021"
+    name: "University of Michigan, Getting Started with Python"
