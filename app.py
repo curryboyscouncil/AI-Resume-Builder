@@ -1,4 +1,4 @@
-from flask import Flask, request, Response, render_template_string, redirect, url_for, session
+from flask import Flask, request, Response, render_template_string, redirect, url_for, session,send_from_directory
 import yaml
 from jinja2 import Environment, FileSystemLoader
 import os
@@ -6,6 +6,9 @@ import subprocess
 from groq import Groq
 import json
 import secret
+import subprocess
+import tempfile
+
 
 app = Flask(__name__)
 app.secret_key = secret.session_key  # Needed for session management
@@ -71,7 +74,7 @@ def process_data():
     ''')
 
 
-ct=0
+
 experience_details = {}
 def llama_call(data, jd):
     yaml_data = yaml.safe_load(data)
@@ -115,7 +118,7 @@ Based on the provided job description and candidate's experience and leadership 
         )
         gen_text = completion.choices[0].message
         json_content = json.loads(gen_text.content)  # Assuming that the output is in JSON string format
-        
+        #print(json_content)
         if "experience" in yaml_data:
             for section in yaml_data["experience"]:
                 company = section['company']
@@ -125,7 +128,7 @@ Based on the provided job description and candidate's experience and leadership 
                     if company in details:  # Check if company exists before accessing details
                         
                         section["details"]=details[company]
-            ct+=1
+
 			
         if "leadership" in yaml_data:
             for section in yaml_data["leadership"]:
@@ -134,22 +137,24 @@ Based on the provided job description and candidate's experience and leadership 
                             detail = json_content['Resume Details'][org]
                             if detail and len(detail)>0:
                                 section["details"] = detail
-                                ct+=1
+                                
                                 
 			
         if "skills" in yaml_data:
           if isinstance(yaml_data, dict):
             yaml_data["skills"] = json_content["Skills"].copy()  # Replace skills with a copy
+            print("valid")
           else:
             print("Error: resume_details is not a dictionary. Cannot assign skills.")
         else:
-              yaml_data["skills"] = json_content["Skills"].copy()  # Add skills with a copy
-              ct+=1
+              yaml_data["skills"] = json_content["Skills"].copy()
+              
+              
    
     except Exception as e:
         print(f"An error occurred: {str(e)}")
 
-    return(yaml_data,ct)
+    return(yaml_data)
 
 
 
@@ -157,11 +162,8 @@ Based on the provided job description and candidate's experience and leadership 
 def final_page():
     yaml_data = session.get('yaml_data', '')
     jd = session.get('jd', '')
-    response,ct=llama_call(data=yaml_data,jd=jd)
-    if ct == 3:
-        show_resume_button = True
-    else:
-        show_resume_button = False
+    response=llama_call(data=yaml_data,jd=jd)
+    session["LLM"]=response
 
     return render_template_string('''
         <html><body>
@@ -169,13 +171,46 @@ def final_page():
         <pre>{{ yaml_data }}</pre>
         <h3>Job Description:</h3>
         <pre>{{ jd }}</pre>
-        {% if show_resume_button %}
         <a href="/download_resume">Download Resume</a>
-        {% endif %}
         </body></html>
-    ''', yaml_data=yaml_data, jd=jd, show_resume_button=show_resume_button)
+    ''', yaml_data=yaml_data, jd=jd)
 
-  
+
+
+def generate_resume(resume):
+    env = Environment(
+        block_start_string='~<',
+        block_end_string='>~',
+        variable_start_string='<<',
+        variable_end_string='>>',
+        comment_start_string='<#',
+        comment_end_string='#>',
+        trim_blocks=True,
+        lstrip_blocks=True,
+        loader=FileSystemLoader(searchpath="./"),
+    )
+    template = env.get_template("resume_template.latex")
+    rendered_resume = template.render(resume)
+    print(rendered_resume)
+    filen = resume['name']
+    output_folder = "output"
+    output_filename = f"{filen}_resume.tex"
+    output_path = os.path.join(output_folder, output_filename)
+    with open(output_path, "w") as fout:
+        fout.write(rendered_resume)
+    subprocess.run(["pdflatex", f"{filen}_resume.tex"],cwd="./output")
+    print("PDF compilation successful!")
+    return pdf_path
+    
+
+@app.route('/download_resume', methods=['GET'])
+def download_resume():
+    resume_data = session.get("LLM")  # Example session data, replace with actual data
+    if not resume_data:
+        return "No resume data found!", 404
+    pdf_path = generate_resume(resume_data)
+    return send_from_directory(directory='output', filename='resume.pdf', as_attachment=True)
 
 if __name__ == '__main__':
+    print(os.getcwd())
     app.run(debug=True)

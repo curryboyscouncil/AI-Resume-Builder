@@ -1,0 +1,61 @@
+\documentclass[11pt, a4paper]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{black}
+\usepackage[scale=0.87]{geometry}
+
+\name{<< name >>}{<< surname >>}
+\phone[mobile]{<< contact.phone >>}
+\email{<< contact.email >>}
+\homepage{<< contact.homepage >>}
+
+\begin{document}
+\makecvtitle
+\vspace{-15mm}
+~< if objective >~
+\section{Objective}
+\begin{minipage}{\textwidth}
+<< objective >>
+\end{minipage}
+~< endif >~
+\section{Education}
+~< for entry in education >~
+	~< if entry >~
+	\cventry{<<entry.period>>}{<<entry.degree>>}{<<entry.institution>>}{<<entry.location>>}{<<entry.grade>>}{}
+  ~< endif >~
+~< endfor >~
+
+\section{Experience}
+~< for entry in experience >~
+    \cventry{<<entry.period>>}{<<entry.title>>}{<<entry.company>>}{<<entry.location>>}{}{
+    \begin{itemize}
+        ~< for detail in entry.details >~
+            \item <<detail>>
+        ~< endfor >~
+    \end{itemize}
+    }
+~< endfor >~ 
+
+\section{Leadership Experience}
+~< for entry in leadership >~
+\cventry{<<entry.period>>}{<<entry.title>>}{<<entry.organization>>}{<<entry.location>>}{}{
+  \begin{itemize}
+    ~< for item in entry.details >~
+      \item {<< item >>}
+    ~< endfor >~
+  \end{itemize}
+}
+ ~< endfor >~
+
+\section{Skills}
+~< for key, value in skills.items() >~
+\cvitem{<< key >>}{<< value >>}
+~< endfor >~
+
+
+\section{Certifications}
+~< for cert in certifications >~
+\cvitem{<<cert.year>>}{<<cert.name>>}
+~< endfor >~
+
+\clearpage
+\end{document}
