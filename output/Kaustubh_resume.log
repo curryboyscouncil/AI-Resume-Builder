@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.21)  8 JUL 2024 13:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.21)  9 JUL 2024 14:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -716,8 +716,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 Package hyperref Info: Option `breaklinks' set `true' on input line 11.
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 11.
-
-No file Kaustubh_resume.aux.
+ (./Kaustubh_resume.aux)
 \openout1 = `Kaustubh_resume.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
@@ -738,6 +737,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
+
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count315
@@ -815,6 +815,7 @@ File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 11.
+(./Kaustubh_resume.out) (./Kaustubh_resume.out)
 \@outlinefile=\write4
 \openout4 = `Kaustubh_resume.out'.
 
@@ -847,14 +848,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--12
 
  []
 
-Runaway argument?
-{ \begin {itemize} \item {Improved student satisfaction by 15\item {C\ETC.
-! Paragraph ended before \\cventry was complete.
-<to be read again> 
-                   \par 
-l.45 
-     
-? 
 [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
@@ -867,22 +860,15 @@ mf-dist/fonts/enc/dvips/fontawesome5/fa5free0.enc}] (./Kaustubh_resume.aux)
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-Package rerunfilecheck Warning: File `Kaustubh_resume.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Kaustubh_resume.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  9A7FF32D6620BBC9B12594D54F4B349B;606.
+Package rerunfilecheck Info: File `Kaustubh_resume.out' has not changed.
+(rerunfilecheck)             Checksum: A4A2DA4AC68DB8C89D9D48E1D270C68B;518.
  ) 
 Here is how much of TeX's memory you used:
- 25823 strings out of 474116
- 496762 string characters out of 5743682
- 1946187 words of memory out of 5000000
- 47730 multiletter control sequences out of 15000+600000
- 591200 words of font info for 82 fonts, out of 8000000 for 9000
+ 25840 strings out of 474116
+ 497042 string characters out of 5743682
+ 1949187 words of memory out of 5000000
+ 47738 multiletter control sequences out of 15000+600000
+ 591484 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  129i,11n,129p,1012b,470s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/fontawesome5/FontAweso
@@ -891,10 +877,10 @@ awesome5/FontAwesome5Free-Solid.pfb></usr/local/texlive/2024/texmf-dist/fonts/t
 ype1/public/tex-gyre/qplb.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/p
 ublic/tex-gyre/qplr.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/
 tex-gyre/qplri.pfb>
-Output written on Kaustubh_resume.pdf (1 page, 225502 bytes).
+Output written on Kaustubh_resume.pdf (1 page, 224644 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
- 8 named destinations out of 1000 (max. 500000)
- 22029 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 83 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
+ 7 named destinations out of 1000 (max. 500000)
+ 22069 words of extra memory for PDF output out of 24883 (max. 10000000)
 

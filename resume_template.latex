@@ -48,7 +48,7 @@
 
 \section{Skills}
 ~< for key, value in skills.items() >~
-\cvitem{<< key >>}{<< value >>}
+\cvitem{<< key >>}{<< value | join(', ') >>}
 ~< endfor >~
 
 
